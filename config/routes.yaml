@@ -1,3 +1,7 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+# Nom de la page (index)
+# Chemin vers la page (/)
+# Controleur et methode a appeller
+index:
+    path: /
+    controller: App\Controller\MainController::index
+

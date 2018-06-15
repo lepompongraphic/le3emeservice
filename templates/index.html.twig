@@ -1,0 +1,340 @@
+{# templates/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<!-- Start section "Accueil" -->
+<div id="header" class="home">
+
+<div class="container">
+  <div class="header-content">
+    <h1>Le lien <span class="typed"></span></h1>
+    <h3>Des repas pour tous !</h3>
+
+    <ul class="list-unstyled list-social">
+      <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+      <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+      <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+    </ul>
+  </div>
+</div>
+</div>
+<!-- End section "Accueil" -->
+
+<!-- Start section "Le projet" -->
+<div id="projet" class="paddsection">
+
+<div class="container">
+  <div class="section-title text-center">
+    <h2>LE PROJET : Une plate-forme de partage de denrées invendues.</h2>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-between">
+
+    <div class="col-lg-4">
+      <div class="div-img-bg">
+        <div class="about-img">
+          <img src="{{ asset('images/vegetables.jpg') }}" class="img-responsive" alt="vegetables">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="about-descr">
+
+        <p class="p-heading">Un geste pour la planète.</p>
+        <p class="separator">Réduisons le gaspillage !</p>
+        <p>Chaque année en France, la quantité de déchets alimentaires s’élève à 2,3 millions de tonnes dans la distribution (hyper et supermarchés, hard-discounts, épiceries et commerces de proximité), 1,6 million de tonnes dans la restauration (collective et commerciale) et 5,2 millions de tonnes (soit 79 kg par personne) dans les foyers.<br>
+        Au total, plus de 9 millions de tonnes (soit environ 137 kg par personne) si l’on additionne la distribution, la restauration et les foyers (sans compter les pertes liées à la production agricole ainsi qu’à la transformation et au conditionnement des produits dans les industries agroalimentaires).<br>
+        (Source : zero-gachis.com avec Global Gâchis)</p>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-between">
+
+    <div class="col-lg-4">
+      <div class="div-img-bg">
+        <div class="about-img">
+          <img src="{{ asset('images/bread.jpg') }}" class="img-responsive" alt="bread">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="about-descr">
+
+        <p class="p-heading">Une action solidaire.</p>
+        <p class="separator">Donnons à manger à ceux qui ont plus besoin !</p>
+        <p>En France, 1 précaire sur 2 ne mange pas à sa faim. Sur les 346 patients interrogés par Médecins du monde (...), une personne sur deux déclare ne pas manger à sa faim "souvent", ou "parfois". Et 78% des sondés sont en situation d'insécurité alimentaire pour raison financière.<br>
+        Pour les plus précaires, les journées sans repas sont habituelles : plus de 50% des adultes et 20% des enfants n'ont pas mangé pendant au moins une journée entière au cours du dernier mois.<br>
+        Médecins du Monde recommande de "développer des aides alimentaires adaptées et ciblées" (...).<br>
+        (Source : lefigaro.fr avec AFP)</p>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-between">
+
+    <div class="col-lg-4">
+      <div class="div-img-bg">
+        <div class="about-img">
+          <img src="{{ asset('images/basket.jpg') }}" class="img-responsive" alt="basket">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="about-descr">
+
+        <p class="p-heading">Un geste pour deux bonnes actions.</p>
+        <p class="separator">Aidons aux plus démunis et préservons l'environnement !</p>
+        <p><strong>Le 3ème Service</strong> est une plate-forme permettant de faire le lien entre associations et professionnels de l'alimentaire soucieux d'aider les plus nécessiteux tout en réalisant un geste écologique. <strong>Et cela sans le moindre coût</strong> !<br>
+        Vous êtes restaurateur, commerçant (épicerie, supermarché, hypermarché) ou industriel dans l'agro-alimentaire et vous disposez d'invendus encore consommables ? Ne les jettez-pas et signalez-les sur <strong>Le 3ème Service</strong> !<br>
+        Vous êtes une association caritative et vous cherchez des dons alimentaires pour palier aux besoins des plus précaires ? Consultez <strong>Le 3ème Service</strong> et récupérez les ressources alimentaires mises à disposition par les donateurs inscrits.</p>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- End section "Le projet" -->
+
+<!-- Start section "Services" -->
+<div id="services">
+<div class="container">
+  <div class="row">
+
+      <div class="col-md-6">
+
+        <div class="services-block">
+
+          <span><h4>VOUS ETES RESTAURATEUR OU COMMERCANT ?</h4></span>
+          <p class="separator"></p><br>
+
+        </div>
+
+        <div class="services-block">
+
+          <i class="ion-android-checkbox-outline"></i>
+          <span>Faites partie de notre projet !</span>
+          <p class="separator">Remplissez le formulaire d'inscription.</p><br>
+
+        </div>
+
+        <div class="services-block">
+
+          <i class="ion-pizza"></i>
+          <span>Préparez vos paniers d'aliments ou repas invendus !</span>
+          <p class="separator">Signalez-le sur "le 3ème service" et une association prendra contact avec vous pour les récupérer.</p><br>
+
+        </div>
+
+        <div class="services-block">
+
+          <i class="ion-thumbsup"></i>
+          <span>Accomplissez un acte solidaire et écologique !</span>
+          <p class="separator">Vous offrirez des repas aux plus précaires et éviterez le gaspillage.</p><br>
+
+        </div>
+
+        <div class="bouton">
+          <span class="btn btn-defeault btn-send"><a href="">Inscription</a></span>
+          <span><a href="">Connexion</a></span>
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+
+      <div class="services-block">
+
+        <span><h4>VOUS ETES UNE ASSOCIATION CARITATIVE ?</h4></span>
+        <p class="separator"></p><br>
+
+      </div>
+
+      <div class="services-block">
+
+        <i class="ion-android-checkbox-outline"></i>
+        <span>Faites partie de notre projet !</span>
+        <p class="separator">Remplissez le formulaire d'inscription.</p><br>
+
+      </div>
+
+      <div class="services-block">
+
+        <i class="ion-flag"></i>
+        <span>Choisissez un ou des restaurateur(s) ou commerçant(s) !</span>
+        <p class="separator">Consultez les listes d'aliments et repas invendus signalés par les restaurateurs ou commerçants inscrits.</p><br>
+
+      </div>
+
+      <div class="services-block">
+
+        <i class="ion-thumbsup"></i>
+        <span>Améliorez le quotidien de nombreuses personnes !</span>
+        <p class="separator">Distribuez les aliments ou repas aux plus démunis.</p><br>
+
+      </div>
+
+      <div class="bouton">
+          <span class="btn btn-defeault btn-send"><a href="">Inscription</a></span>
+          <span><a href="">Connexion</a></span>
+        </div>
+
+      </div>
+
+  </div>
+</div>
+</div>
+<!-- End section "Services" -->
+
+<!-- Start section "Portfolio" -->
+<div id="portfolio" class="text-center paddsection">
+
+<div class="container">
+  <div class="section-title text-center">
+    <h2>Partenaires</h2>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="portfolio-list">
+
+        <ul class="nav list-unstyled" id="portfolio-flters">
+          <li class="filter filter-active" data-filter=".tout">Tout</li>
+          <li class="filter" data-filter=".associations">Associations</li>
+          <li class="filter" data-filter=".restaurateurs">Restaurateurs</li>
+          <li class="filter" data-filter=".commerçants">Commerçants</li>
+        </ul>
+
+      </div>
+
+      <div class="portfolio-container">
+
+        <div class="col-lg-4 col-md-6 portfolio-thumbnail tout associations">
+          <a class="popup-img" href="{{ asset('images/portfolio/associations01.jpg') }}">
+            <img src="{{ asset('images/portfolio/associations01.jpg') }}" alt="associations01">
+          </a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-thumbnail tout associations">
+          <a class="popup-img" href="{{ asset('images/portfolio/associations01.jpg') }}">
+            <img src="{{ asset('images/portfolio/associations01.jpg') }}" alt="associations02">
+          </a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-thumbnail tout restaurateurs">
+          <a class="popup-img" href="{{ asset('images/portfolio/restaurateurs01.jpg') }}">
+            <img src="{{ asset('images/portfolio/restaurateurs01.jpg') }}"  alt="restaurateurs01">
+          </a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-thumbnail tout restaurateurs">
+          <a class="popup-img" href="{{ asset('images/portfolio/restaurateurs01.jpg') }}">
+            <img src="{{ asset('images/portfolio/restaurateurs01.jpg') }}"  alt="restaurateurs02">
+          </a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-thumbnail tout commerçants">
+          <a class="popup-img" href="{{ asset('images/portfolio/commerçants01.jpg') }}">
+            <img src="{{ asset('images/portfolio/commerçants01.jpg') }}" alt="commerçants01">
+          </a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-thumbnail tout commerçants">
+          <a class="popup-img" href="{{ asset('images/portfolio/commerçants02.jpg') }}">
+            <img src="{{ asset('images/portfolio/commerçants02.jpg') }}" alt="commerçants02">
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- End section "Portfolio" -->
+
+<!-- Start section "Contact" -->
+<div id="contact" class="paddsection">
+<div class="container">
+  <div class="contact-block1">
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div class="contact-contact">
+
+          <h2 class="mb-30">Nous contacter : </h2>
+
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <form action="Le3emeservice@gmail.com" method="post" role="form" class="contactForm">
+          <div class="row">
+
+            <div id="sendmessage">Votre message a bien été envoyé. Merci !</div>
+            <div id="errormessage"></div>
+
+            <div class="col-lg-6">
+              <div class="form-group contact-block1">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Votre nom..." data-rule="minlen:4" data-msg="Merci d'entrer un nom d'au moins 4 caractères !" />
+                <div class="validation"></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Votre email..." data-rule="email" data-msg="Merci d'entrer un email valide !" />
+                <div class="validation"></div>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Votre sujet..." data-rule="minlen:4" data-msg="Merci d'entrer un sujet d'au moins 8 caractères !" />
+                <div class="validation"></div>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="12" data-rule="required" data-msg="Merci d'entrer votre message !" placeholder="Votre message..."></textarea>
+                <div class="validation"></div>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <input type="submit" class="btn btn-defeault btn-send" value="Envoyer le message">
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- End section "Contact" -->
+
+{% endblock %}
+
