@@ -270,5 +270,29 @@ class Professionnel implements UserInterface, \Serializable
     {
         return $this->isActive;
     }
+
+    public function getStatutProfessionnel(): ?string
+    {
+        return $this->statutProfessionnel;
+    }
+
+    public function setStatutProfessionnel(string $statutProfessionnel): self
+    {
+        $this->statutProfessionnel = $statutProfessionnel;
+
+        return $this;
+    }
+
+    public function getIsActive(): ?bool
+    {
+        return $this->isActive;
+    }
+
+    public function setIsActive(bool $isActive): self
+    {
+        $this->isActive = $isActive;
+
+        return $this;
+    }
 }
 
