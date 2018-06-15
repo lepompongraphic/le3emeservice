@@ -61,6 +61,17 @@ class Association
      */
     private $statutAssociation;
 
+    /**
+     * @ORM\Column(name="is_active", type="boolean")
+     */
+     private $isActive;
+
+     /**
+     * @ORM\Column(type="array")
+     */
+     private $roles;
+     
+
     public function getIdAssociation()
     {
         return $this->IdAssociation;
@@ -171,6 +182,30 @@ class Association
     public function setStatutAssociation(string $statutAssociation): self
     {
         $this->statutAssociation = $statutAssociation;
+
+        return $this;
+    }
+
+    public function getIsActive(): ?bool
+    {
+        return $this->isActive;
+    }
+
+    public function setIsActive(bool $isActive): self
+    {
+        $this->isActive = $isActive;
+
+        return $this;
+    }
+
+    public function getRoles(): ?array
+    {
+        return $this->roles;
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
 
         return $this;
     }
