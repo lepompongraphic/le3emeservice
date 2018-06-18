@@ -24,11 +24,10 @@ class FormType extends AbstractType
                 ->add('cp', TextType::class, array('label' => 'Code Postal'))
                 ->add('tel', TextType::class, array('label' => 'Telephone'))
                 ->add('statut', ChoiceType::class,
-                array('choices'=>array('association'=>'a',
+                  array('choices'=>array('association'=>'a',
                                       'professionnel'=>'p'),
                                       'expanded'=> true, 
-                                      'multiple'=> false));
-          
+                                      'multiple'=> false));      
     }
 
      public function configureOptions(OptionsResolver $resolver)

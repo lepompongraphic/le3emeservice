@@ -305,9 +305,3 @@ class Membre implements UserInterface, \Serializable
     
    
 }
-
-
-    
-
-
-
