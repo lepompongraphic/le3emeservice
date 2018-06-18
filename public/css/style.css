@@ -222,9 +222,13 @@ nav ul li a:hover, nav ul li a:focus {
 .logo {
   float: left;
 }
+.logo h3 {
+    font-family: 'Cabin Sketch', cursive;
+    color: #fff;
+}
 
 .logo img {
-  width: 100px;
+  width: 200px;
 
 }
 
@@ -255,6 +259,11 @@ nav ul li a:hover, nav ul li a:focus {
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+}
+
+.header-content {
+    padding-top: 40%;
 }
 
 .header-content h1 {
