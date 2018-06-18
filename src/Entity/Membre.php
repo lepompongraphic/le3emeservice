@@ -296,10 +296,14 @@ class Membre implements UserInterface, \Serializable
         return $this;
 
     }
-}
 
-
+    public function getIdMembre(): ?int
+    {
+        return $this->idMembre;
     }
 }
+
+
+
 
 
