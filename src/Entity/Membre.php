@@ -134,12 +134,12 @@ class Membre implements UserInterface, \Serializable
     }
 
 
-    public function getRaisonSocial(): ?string
+    public function getraisonSocial(): ?string
     {
         return $this->raisonSocial;
     }
 
-    public function setRaisonSocial(string $raisonSocial): self
+    public function setraisonSocial(string $raisonSocial): self
     {
         $this->raisonSocial = $raisonSocial;
 
@@ -147,12 +147,12 @@ class Membre implements UserInterface, \Serializable
     }
 
 
-    public function getSiret(): ?string
+    public function getsiret(): ?string
     {
         return $this->siret;
     }
 
-    public function setSiret(string $siret): self
+    public function setsiret(string $siret): self
     {
         $this->siret = $siret;
 
@@ -301,9 +301,7 @@ class Membre implements UserInterface, \Serializable
     {
         return $this->idMembre;
     }
+
+    
+   
 }
-
-
-
-
-

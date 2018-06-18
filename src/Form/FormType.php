@@ -28,24 +28,14 @@ class FormType extends AbstractType
                                       'professionnel'=>'p'),
                                       'expanded'=> true, 
                                       'multiple'=> false))
-                ->add('isActive', ChoiceType::class,
-                      array('choices'=>array('connecté'=>'c',
-                                            'deconnecté'=>'d'),
-                                            'expanded'=> true, 
-                                            'multiple'=> false))
-                ->add('roles', ChoiceType::class,
-                array('choices'=>array('admin'=>'a',
-                                      'user'=>'u'),
-                                      'expanded'=> true, 
-                                      'multiple'=> false));
           
             }
 
      public function configureOptions(OptionsResolver $resolver)
 
     {
-        $resolver->setDefaults(array('data_class'=>FormType::class));
-            
+        $resolver->setDefaults(array('data_class'=>Membre::class));
+          
     }
 
 

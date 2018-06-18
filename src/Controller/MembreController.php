@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-//src/Controller/SecurityController
+//src/Controller/MembreController
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,9 +16,10 @@ use Symfony\Component\Routing\Annotation\Route;
 // table membre
 use App\Entity\Membre;
 //formulaire inscription
-use App\Form\MembreType;
+use App\Form\FormType;
 
 class MembreController extends Controller
+
 {
 	/* Inscription d'un utilisateur
 	affiche le formulaire et ajoute l'utilisateur dans la table membre 
@@ -33,7 +34,7 @@ class MembreController extends Controller
 		//liaison avec la table des membre
 		$membre = new Membre();
 		//création du formulaire
-		$form = $this->createForm(MembreType::class, $membre);
+		$form = $this->createForm(FormType::class, $membre);
 
 		//récupération des données du formulaire
 		$form->handleRequest($request);
@@ -52,7 +53,7 @@ class MembreController extends Controller
 			return $this->redirectToRoute('index');
 		}
 		//affichage du formulaire
-		return $this->render('security/inscription.html.twig',
+		return $this->render('inscription.html.twig',
 									array('form' => $form->createView(),
 												'title' => 'Inscription'));
 	}
