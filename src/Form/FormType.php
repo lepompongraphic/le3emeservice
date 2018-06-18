@@ -27,7 +27,7 @@ class FormType extends AbstractType
                 array('choices'=>array('association'=>'a',
                                       'professionnel'=>'p'),
                                       'expanded'=> true, 
-                                      'multiple'=> false));
+                                      'multiple'=> false))
           
             }
 
@@ -35,7 +35,7 @@ class FormType extends AbstractType
 
     {
         $resolver->setDefaults(array('data_class'=>Membre::class));
-            
+          
     }
 
 
