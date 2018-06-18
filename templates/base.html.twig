@@ -1,12 +1,121 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
+
+<html lang="fr">
+
+<head>
+
+	<!-- meta -->
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+	<title>{% block title %}Le 3ème Service{% endblock %}</title>
+
+	<meta content="Associations, Caritatif, Faim, Gaspillage, Environnement, Social, Précarité" name="keywords">
+	<meta content="Le 3ème service" name="description">
+	<meta content="Gheorghina, Guillaume, Haifa, Laura" name="author" >
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+
+	<!-- Bootstrap CSS File -->
+	<link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+	<!-- Libraries CSS Files -->
+	<link href="{{ asset('lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('lib/magnific-popup/magnific-popup.css') }}" rel="stylesheet">
+	<link href="{{ asset('lib/hover/hover.min.css') }}" rel="stylesheet">
+
+	<!-- Main Stylesheet File -->
+	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+	<!-- Responsive css -->
+	<link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+
+	<!-- Favicon -->
+	<link rel="{{ asset('shortcut icon') }}" href="images/favicon.png">
+
+	{% block stylesheets %}{% endblock %}
+
+</head>
+
+	<body>
+
+		<!-- Start section "Navbar" -->
+		<nav id="main-nav">
+		    <div class="row">
+		      	<div class="container">
+
+			        <div class="logo">
+			          	<a href="{{ url('index') }}"><img src="{{ asset('images/logo.png') }}" alt="logo"></a>
+			        </div>
+
+		        	<div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+		        	<ul class="nav-menu list-unstyled">
+				        <li><a href="{{ url('index') }}/#projet" class="smoothScroll">Le projet</a></li>
+				        <li><a href="{{ url('index') }}/#portfolio" class="smoothScroll">Partenaires</a></li>
+				        <li><a href="{{ url('index') }}/#contact" class="smoothScroll">Contact</a></li>
+
+				        <li><a href="">Page membre</a></li>
+				        <li><a href="">Déconnexion</a></li>
+				       
+				        <li><a href="{{ url('inscription') }}">Inscription</a></li>
+				        <li><a href="">Connexion</a></li>
+				       
+		      		</ul>
+
+		      	</div>
+		    </div>
+		</nav>
+		<!-- End section "Navbar" -->
+
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+
+        <!-- Start section "Footer" -->
+		  <div id="footer" class="text-center">
+		    <div class="container">
+		      	<div class="socials-media text-center">
+
+				    <ul class="list-unstyled">
+				        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+				        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+				        <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+				    </ul>
+
+		      	</div>
+
+      			<p>&copy; <a href="{{ url('index') }}">Le 3ème Service</a>. Tous droits réservés.</p>
+
+		      	<div class="credits">
+		        <!--
+			    All the links in the footer should remain intact.
+			    You can delete the links only if you purchased the pro version.
+			    Licensing information: https://bootstrapmade.com/license/
+			    Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Folio
+		       	-->
+		        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>, optimized by The Chuck Team.
+		      	</div>
+
+   			</div>
+  		</div>
+		<!-- End section "Footer" -->
+
+		<!-- JavaScript Libraries -->
+		<script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
+		<script src="{{ asset('lib/jquery/jquery-migrate.min.js') }}"></script>
+		<script src="{{ asset('lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ asset('lib/typed/typed.js') }}"></script>
+		<script src="{{ asset('lib/magnific-popup/magnific-popup.min.js') }}"></script>
+		<script src="{{ asset('lib/isotope/isotope.pkgd.min.js') }}"></script>
+
+		<!-- Contact Form JavaScript File -->
+		<script src="{{ asset('contactform/contactform.js') }}"></script>
+
+		<!-- Template Main Javascript File -->
+		<script src="{{ asset('js/main.js') }}"></script>
+
+		{% block javascripts %}{% endblock %}
+
+	</body>
+
 </html>

@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Professionnel;
+use App\Entity\Membre;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -38,7 +38,6 @@ class MembreRepository extends ServiceEntityRepository
 
     /*
     public function findOneBySomeField($value): ?Membre
-    {
         return $this->createQueryBuilder('c')
             ->andWhere('c.exampleField = :val')
             ->setParameter('val', $value)

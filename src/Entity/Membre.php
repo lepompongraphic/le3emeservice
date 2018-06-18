@@ -4,7 +4,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ProfessionnelRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\MembreRepository")
  */
 class Membre implements UserInterface, \Serializable
 {
@@ -122,7 +122,7 @@ class Membre implements UserInterface, \Serializable
     //méthode imposée par l'interface
     public function setPassword(string $mdp): self
     {
-        $this->mdp = $md;
+        $this->mdp = $mdp;
         return $this;
     }
 
@@ -134,27 +134,27 @@ class Membre implements UserInterface, \Serializable
     }
 
 
-    public function getRaisonSocial(): ?string
+    public function getraisonSocial(): ?string
     {
-        return $this->RaisonSocial;
+        return $this->raisonSocial;
     }
 
-    public function setRaisonSocial(string $RaisonSocial): self
+    public function setraisonSocial(string $raisonSocial): self
     {
-        $this->RaisonSocial = $RaisonSocial;
+        $this->raisonSocial = $raisonSocial;
 
         return $this;
     }
 
 
-    public function getSiretProfessionnel(): ?string
+    public function getsiret(): ?string
     {
-        return $this->SiretProfessionnel;
+        return $this->siret;
     }
 
-    public function setSiret(string $Siret): self
+    public function setsiret(string $siret): self
     {
-        $this->Siret = $Siret;
+        $this->siret = $siret;
 
         return $this;
     }
@@ -280,6 +280,7 @@ class Membre implements UserInterface, \Serializable
     {
         $this->statut = $statut;
 
+
         return $this;
     }
 
@@ -293,6 +294,20 @@ class Membre implements UserInterface, \Serializable
         $this->isActive = $isActive;
 
         return $this;
+
     }
+
+    public function getIdMembre(): ?int
+    {
+        return $this->idMembre;
+    }
+
+    
+   
 }
+
+
+    
+
+
 

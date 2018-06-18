@@ -1,7 +1,9 @@
 security:
     # Partie qui permet d'encrypter le mot de passe :
     encoders:
+
         App\Entity\Membre:
+
             algorithm: bcrypt # "Blowfish".
             cost: 14
 
@@ -18,8 +20,10 @@ security:
     providers:
         main:
             entity:
+
                 class: App\Entity\Membre
                 property: email
+
 
     firewalls:
         dev:

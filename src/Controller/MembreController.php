@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-//src/Controller/SecurityController
+//src/Controller/MembreController
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,15 +13,16 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 //pour utiliser les annotations
 use Symfony\Component\Routing\Annotation\Route;
-// table professionnel
-use App\Entity\Professionnel;
+// table membre
+use App\Entity\Membre;
 //formulaire inscription
-use App\Form\ProfessionnelType;
+use App\Form\FormType;
 
-class ProfessionnelController extends Controller
+class MembreController extends Controller
+
 {
 	/* Inscription d'un utilisateur
-	affiche le formulaire et ajoute l'utilisateur dans la table professionnel 
+	affiche le formulaire et ajoute l'utilisateur dans la table membre 
 	*/
 	/**
 	* @Route(
@@ -30,10 +31,10 @@ class ProfessionnelController extends Controller
 	*/
 	public function inscription(Request $request, UserPasswordEncoderInterface $passwordEncoder)
 	{
-		//liaison avec la table des professionnel
-		$professionnel = new Professionnel();
+		//liaison avec la table des membre
+		$membre = new Membre();
 		//création du formulaire
-		$form = $this->createForm(ProfessionnelType::class, $professionnel);
+		$form = $this->createForm(FormType::class, $membre);
 
 		//récupération des données du formulaire
 		$form->handleRequest($request);
@@ -41,18 +42,18 @@ class ProfessionnelController extends Controller
 		if($form->isSubmitted() && $form->isValid())
 		{
 			//encodage du mot de passe
-			$hash = $passwordEncoder->encodePassword($professionnel, $professionnel->getPasswordProfessionnel());
-			$professionnel->setPasswordProfessionnel($hash);
+			$hash = $passwordEncoder->encodePassword($membre, $membre->getPassword());
+			$membre->setPassword($hash);
 			//enregistrement dans la table
 			$em = $this->getDoctrine()->getManager();
-			$em->persist($professionnel);
+			$em->persist($membre);
 			$em->flush();
 
 			//retour à l'accueil
 			return $this->redirectToRoute('index');
 		}
 		//affichage du formulaire
-		return $this->render('security/inscription.html.twig',
+		return $this->render('inscription.html.twig',
 									array('form' => $form->createView(),
 												'title' => 'Inscription'));
 	}
