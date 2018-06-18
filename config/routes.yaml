@@ -5,3 +5,7 @@ index:
     path: /
     controller: App\Controller\MainController::index
 
+logout:
+    path: /logout
+    
+

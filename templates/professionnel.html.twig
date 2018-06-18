@@ -20,6 +20,38 @@
 	
 	{# Formulaire produit #}
 
+	<br><br>
+	<h2 class="text-center">Proposer un don</h2>
+	<br>
+
+	{{ form_start(form) }}
+	<div class="form-group">
+	{{ form_row(form.description, 
+							{attr: {class: 'form-control'}}) }}
+	</div>
+
+	<div class="form-group">
+	{{ form_row(form.dateEntree, 
+							{attr: {class: 'form-control'}}) }}
+	</div>
+
+	<div class="form-group" id="reserver">
+	{{ form_row(form.reserver, 
+							{attr: {class: 'form-control'}}) }}
+	</div>
+	
+	<div class="form-group">
+	{{ form_row(form.heureCollecte, 
+							{attr: {class: 'form-control'}}) }}
+	</div>
+
+	</div>
+	<div class="form-group text-center">
+		<button type="submit" class="btn btn-dark">Valider</button>
+	</div>
+	{{ form_end(form) }}
+	<br>
+
 </div>
 
 

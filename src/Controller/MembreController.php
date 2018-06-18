@@ -63,7 +63,7 @@ class MembreController extends Controller
 	*		"/login",
 	*	  name="login")
 	*/
-	public function login(Request $request, AuthenticationUtils $authUtils)
+	public function connexion(Request $request, AuthenticationUtils $authUtils)
 	{
 		//récupération de l'erreur si besoin
 		$error = $authUtils->getLastAuthenticationError();
@@ -71,14 +71,10 @@ class MembreController extends Controller
 		$lastUsername = $authUtils->getLastUsername();
 
 		//affichage du formulaire
-		return $this->render('security/login.html.twig',
+		return $this->render('login.html.twig',
 							array('last_username' => $lastUsername,
 										'error' => $error,
-										'title' => 'login'));
+										'title' => 'connexion'));
 	}	
-	/**
-	* @Route(
-	*		"/logout",
-	*	  name="logout")
-	*/
+	
 }

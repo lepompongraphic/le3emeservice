@@ -36,10 +36,11 @@ security:
             form_login:
                 login_path: login
                 check_path: login
+                default_target_path: /profil
             remember_me:
                 secret: '%kernel.secret%'
                 lifetime: 604800 # 1 semaine en secondes.
-                path: /
+                path: / 
             logout: 
                 path: /logout
                 target: /
