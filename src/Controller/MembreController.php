@@ -76,9 +76,5 @@ class MembreController extends Controller
 										'error' => $error,
 										'title' => 'connexion'));
 	}	
-	/**
-	* @Route(
-	*		"/logout",
-	*	  name="logout")
-	*/
+	
 }

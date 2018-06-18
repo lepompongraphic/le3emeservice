@@ -230,7 +230,7 @@ class Membre implements UserInterface, \Serializable
     public function serialize()
     {
         return serialize(array(
-            $this->id,
+            $this->idMembre,
             $this->email,
             $this->mdp,
             $this->isActive
@@ -239,7 +239,7 @@ class Membre implements UserInterface, \Serializable
     //dé-sérialisation de l'objet (session)
     public function unserialize($serialized)
     {
-        list($this->id, 
+        list($this->idMembre, 
                  $this->email,
                  $this->mdp,
                  $this->isActive)
