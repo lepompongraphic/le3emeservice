@@ -19,12 +19,7 @@ class Don
     /**
      * @ORM\Column(type="integer")
      */
-    private $idAssociation;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $idProfessionnel;
+    private $idMembre;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -51,26 +46,16 @@ class Don
         return $this->id;
     }
 
-    public function getIdAssociation(): ?int
+
+
+    public function getIdMembre(): ?int
     {
-        return $this->idAssociation;
+        return $this->idMembre;
     }
 
-    public function setIdAssociation(int $idAssociation): self
+    public function setIdMembre(int $idMembre): self
     {
-        $this->idAssociation = $idAssociation;
-
-        return $this;
-    }
-
-    public function getIdProfessionnel(): ?int
-    {
-        return $this->idProfessionnel;
-    }
-
-    public function setIdProfessionnel(int $idProfessionnel): self
-    {
-        $this->idProfessionnel = $idProfessionnel;
+        $this->idMembre = $idMembre;
 
         return $this;
     }
