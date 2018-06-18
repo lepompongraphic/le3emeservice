@@ -46,7 +46,7 @@
 		      	<div class="container">
 
 			        <div class="logo">
-			          	<a href="{{ url('index') }}"><img src="{{ asset('images/logo00.svg') }}" alt="logo"></a>
+			          	<a href="{{ url('index') }}"><img src="{{ asset('images/logoE.svg') }}" alt="logo"></a>
 			        </div>
 
 		        	<div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
@@ -56,8 +56,13 @@
 				        <li><a href="{{ url('index') }}/#portfolio" class="smoothScroll">Partenaires</a></li>
 				        <li><a href="{{ url('index') }}/#contact" class="smoothScroll">Contact</a></li>
 
+				        <!-- if (statut == 'a') 
+				        { -->
 				        <li><a href="{{ url('association') }}">Page membre</a></li>
+				        <!-- } else { -->
 				        <li><a href="{{ url('professionnel') }}">Page membre</a></li>
+						<!-- } -->
+
 				        <li><a href="">Déconnexion</a></li>
 				       
 				        <li><a href="{{ url('inscription') }}">Inscription</a></li>
