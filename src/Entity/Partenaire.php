@@ -1,1 +1,0 @@
-Partenaire.php

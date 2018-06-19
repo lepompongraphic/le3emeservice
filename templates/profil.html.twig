@@ -1,0 +1,145 @@
+{# templates/profil.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %} Profil {% endblock %}
+
+
+{% block body %}
+
+
+	{% if app.user.statut == 'p' %}
+
+		<br>
+		<h2>Profile Professionnel</h2>
+		<br>
+
+		<div class="alert alert-secondary" role="alert">
+			<h4>Vous êtes bien connecté {{ app.user.username }}  <i class="fas fa-user"></i> </h4>
+			<p><strong>Votre siret:</strong> {{ app.user.siret }}</p>
+			<p><strong>Votre email:</strong> {{ app.user.email }}</p>
+			<p><strong>Votre adresse:</strong> {{ app.user.adresse }}, {{ app.user.cp }} - {{ app.user.ville }}</p>
+			<p><strong>Votre téléphone:</strong> {{ app.user.tel }}</p>
+		</div>
+		
+		{# Formulaire produit #}
+
+		<br><br>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8">
+				<h2 class="text-center">Proposer un don</h2>
+				<br>
+
+				{{ form_start(formDon) }}
+				<div class="form-group">
+				{{ form_row(formDon.description, 
+										{attr: {class: 'form-control'}}) }}
+				</div>
+
+				<div class="form-group">
+					<div class="form-check form-check-inline">
+					{{ form_row(formDon.dateEntree, 
+											{attr: {class: 'form-control'}}) }}
+					</div>
+				</div>
+
+				<div class="form-group">
+				{{ form_row(formDon.heureCollecte, 
+										{attr: {class: 'form-control'}}) }}
+				</div>
+				<div class="form-group">
+			        <div class="form-check form-check-inline">
+				    {{ form_row(formDon.reserver, 
+				                             {attr: {class: 'form-check-input'}}) }}
+				    </div>
+			    </div>
+
+				
+				<div class="form-group text-center">
+					<button type="submit" class="btn btn-dark">Valider</button>
+				</div>
+				{{ form_end(formDon) }}
+				<br>
+
+				</div> {# fin col-sm-8 #}
+			</div> {# fin row #}
+		</div> {# fin container #}
+
+
+	{% else %}
+
+		<br>
+		<h2>Profile de votre Association</h2>
+		<br>
+
+		<div class="alert alert-secondary" role="alert">
+			<h4>Vous êtes bien connecté {{ app.user.username }}  <i class="fas fa-user"></i> </h4>
+			<p><strong>Votre siret:</strong> {{ app.user.siret }}</p>
+			<p><strong>Votre email:</strong> {{ app.user.email }}</p>
+			<p><strong>Votre adresse:</strong> {{ app.user.adresse }} {{ app.user.cp }} {{ app.user.ville }}</p>
+			<p><strong>Votre téléphone:</strong> {{ app.user.tel }}</p>
+			
+			{# -- API -- #}
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+	{% endif %}
+
+{% endblock %}
+
+
+
+
+
+
+{# {% block title %} Assotiation {% endblock %}
+
+
+{% block body %}
+
+	<br>
+	<h2>Profile de votre Association</h2>
+	<br>
+
+<div class="alert alert-secondary" role="alert">
+	<h4>Vous êtes bien connecté {{ app.membre.username }}  <i class="fas fa-user"></i> </h4>
+	<p><strong>Votre siret:</strong> {{ app.membre.siret }}</p>
+	<p><strong>Votre email:</strong> {{ app.membre.email }}</p>
+	<p><strong>Votre adresse:</strong> {{ app.membre.adresse }} {{ app.membre.cp }} {{ app.membre.ville }}</p>
+	<p><strong>Votre téléphone:</strong> {{ app.membre.tel }}</p>
+	
+	-- API --
+
+</div>
+
+
+{% endblock %} #}
