@@ -54,7 +54,7 @@ a:hover {
 }
 
 a:hover, a:focus {
-  color: #b8a07e;
+  color: #d19275;
   text-decoration: underline;
 }
 
@@ -84,12 +84,12 @@ p {
 }
 
 ::-moz-selection {
-  background: #b8a07e;
+  background: #d19275;
   color: #fff;
 }
 
 ::selection {
-  background: #b8a07e;
+  background: #d19275;
   color: #fff;
 }
 
@@ -106,7 +106,7 @@ p {
 }
 
 .btn:hover, .btn:focus {
-  color: #b8a07e;
+  color: #d19275;
 }
 
 .padDiv {
@@ -158,7 +158,7 @@ p {
 }
 
 .hvr-shutter-in-horizontal:hover {
-  background: #b8a07e;
+  background: #d19275;
 }
 
 .mb-30 {
@@ -171,7 +171,7 @@ p {
 
 nav {
   position: fixed;
-  background: #b8a07e;
+  background: #d19275;
   z-index: 1000;
   width: 100%;
   padding: 20px;
@@ -222,10 +222,14 @@ nav ul li a:hover, nav ul li a:focus {
 .logo {
   float: left;
 }
+.logo h3 {
+    font-family: 'Cabin Sketch', cursive;
+    color: #fff;
+}
 
 .logo img {
   width: 200px;
-  height: 50px;
+
 }
 
 .responsive {
@@ -242,7 +246,7 @@ nav ul li a:hover, nav ul li a:focus {
 /*-----------------------------------------------------------------------------------*/
 
 #header {
-  background: url("../images/home-bg.jpg") repeat scroll center center / cover;
+  background: url("../images/portada4.jpg") repeat scroll center center / cover;
   height: 100vh;
   width: 100%;
 }
@@ -255,6 +259,11 @@ nav ul li a:hover, nav ul li a:focus {
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+}
+
+.header-content {
+    padding-top: 40%;
 }
 
 #header img {
@@ -304,7 +313,7 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 .header-content .list-social li i:hover {
-color: #b8a07e;
+color: #d19275;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -334,7 +343,7 @@ color: #b8a07e;
 
 #projet .div-img-bg {
   padding-bottom: 30px;
-  border: 20px solid #b8a07e;
+  border: 20px solid #d19275;
 }
 
 #projet .div-img-bg .about-img img {
@@ -402,7 +411,7 @@ color: #b8a07e;
 
 .services-block i {
   font-size: 44px;
-  color: #b8a07e;
+  color: #d19275;
   line-height: 44px;
 }
 
@@ -431,7 +440,7 @@ color: #b8a07e;
 }
 
 .bouton span a:hover, .bouton span a:focus {
-  color: #b8a07e;
+  color: #d19275;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -472,7 +481,7 @@ color: #b8a07e;
 }
 
 #portfolio .portfolio-list .nav li:hover, #portfolio .portfolio-list .nav li.filter-active  {
-  color: #b8a07e;
+  color: #d19275;
   -moz-transition: all 0.5s ease-in-out 0s;
   -ms-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
@@ -593,7 +602,7 @@ color: #b8a07e;
 }
 
 #footer .socials-media ul li a:hover {
-  color: #b8a07e;
+  color: #d19275;
   -moz-transition: all 0.5s ease-in-out 0s;
   -ms-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
