@@ -257,6 +257,10 @@ nav ul li a:hover, nav ul li a:focus {
   flex-direction: column;
 }
 
+#header img {
+  max-width: 75%;
+}
+
 .header-content h1 {
   font-size: 40px;
   font-weight: 700;
@@ -537,6 +541,7 @@ color: #b8a07e;
 
 #contact #sendmessage.show, #contact #errormessage.show, #contact .show {
   display: block;
+  width: 100%;
 }
 
 #contact .validation {

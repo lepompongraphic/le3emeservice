@@ -17,4 +17,13 @@ class MainController extends Controller
 	{
 		return $this->render('index.html.twig');
 	}
+
+	/**
+	* @Route("/mentions", name="mentions")
+	*/
+	public function mentions()
+	{
+		return $this->render('mentions.html.twig');
+	}
+
 }
