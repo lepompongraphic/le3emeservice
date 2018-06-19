@@ -1,0 +1,4 @@
+Pour utiliser le3emeservice@gmail.com avec le formulaire de contact :
+
+- Remplacer php.ini dans C:\xampp\php
+- Remplacer sendmail.ini dans C:\xampp\sendmail
