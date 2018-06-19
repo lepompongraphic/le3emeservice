@@ -54,15 +54,22 @@
 		        	<div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
 
 		        	<ul class="nav-menu list-unstyled">
-				        <li><a href="{{ url('index') }}/#projet" class="smoothScroll">Le projet</a></li>
-				        <li><a href="{{ url('index') }}/#portfolio" class="smoothScroll">Partenaires</a></li>
-				        <li><a href="{{ url('index') }}/#contact" class="smoothScroll">Contact</a></li>
+
 				        {% if app.user %}
-					        <li><a href="">Page membre</a></li>
-					        <li><a href="">Déconnexion</a></li>
-						{% endif %}			       
+				        	<li><a href="{{ url('index') }}/#projet" class="smoothScroll">Le projet</a></li>
+					        <li><a href="{{ url('index') }}/#portfolio" class="smoothScroll">Partenaires</a></li>
+					        <li><a href="{{ url('index') }}/#contact" class="smoothScroll">Contact</a></li>
+					        <li><a href="{{ url('profil') }}">Page membre</a></li>
+					        <li><a href="{{ url('logout') }}">Déconnexion</a></li>
+						
+						{% else %}
+						<li><a href="{{ url('index') }}/#projet" class="smoothScroll">Le projet</a></li>
+				        <li><a href="{{ url('index') }}/#portfolio" class="smoothScroll">Partenaires</a></li>
+				        <li><a href="{{ url('index') }}/#contact" class="smoothScroll">Contact</a></li>		       
 				        <li><a href="{{ url('inscription') }}">Inscription</a></li>
 				        <li><a href="{{ url('login') }}">Connexion</a></li>
+				        {% endif %}	
+
 				       
 		      		</ul>
 
