@@ -1,6 +1,8 @@
 <?php
 namespace App\Form;
+
 //src/Form/LoginType.php
+
 use App\Entity\Membre;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -14,8 +16,8 @@ class LoginType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('email', EmailType::class)
-                ->add('mdp', PasswordType::class);
+        $builder->add('email', EmailType::class, array('label' => 'Email'))
+                ->add('mdp', PasswordType::class, array('label' => 'Mot de passe'));
           
     }
 
@@ -25,8 +27,4 @@ class LoginType extends AbstractType
         $resolver->setDefaults(array('data_class'=>Membre::class));
           
     }
-
-
-
-
 }
