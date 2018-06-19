@@ -5,7 +5,13 @@ index:
     path: /
     controller: App\Controller\MainController::index
 
+# Route et page fictive de connexion :
+login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+
+# Page de déconnexion fictive (gérée par Symfony) :
 logout:
-    path: /logout
-    
+  path: /logout
+
 

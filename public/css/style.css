@@ -266,6 +266,10 @@ nav ul li a:hover, nav ul li a:focus {
     padding-top: 40%;
 }
 
+#header img {
+  max-width: 75%;
+}
+
 .header-content h1 {
   font-size: 40px;
   font-weight: 700;
@@ -546,6 +550,7 @@ color: #d19275;
 
 #contact #sendmessage.show, #contact #errormessage.show, #contact .show {
   display: block;
+  width: 100%;
 }
 
 #contact .validation {
