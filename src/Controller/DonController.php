@@ -1,61 +1,58 @@
 <?php
 namespace App\Controller;
-
-/* src/Controller/DonController */
+//src/Controller/DonController
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
-// Sécurité :
+//sécurité
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-
-// Pour utiliser les annotations :
+//pour utiliser les annotations
 use Symfony\Component\Routing\Annotation\Route;
-
-// Table don :
+// table utilisateurs
 use App\Entity\Don;
-
-// Formulaire don :
+//formulaire inscription
 use App\Form\FormDonType;
 
 class DonController extends Controller
 {
+	/* Proposer un Don
+	affiche le formulaire pour le don 
+	*/
 	/**
 	* @Route(
-	* "/formDon",
-	* name="formDon")
+	*		"/formDon",
+	*	  name="formDon")
 	*/
 	public function formDon(Request $request, UserPasswordEncoderInterface $passwordEncoder)
 	{
-		// Liaison avec la table :
+		//liaison avec la table des utilisateurs
 		$don = new Don();
-
-		// Création du formulaire :
+		//création du formulaire
 		$form = $this->createForm(FormDonType::class, $don);
 
-		// Récupération des données du formulaire :
+		//récupération des données du formulaire
 		$form->handleRequest($request);
-
-		// Si soumis et validé :
+		//si soumis et validé
 		if($form->isSubmitted())
 		{
 
-			// Enregistrement dans la table :
+			//enregistrement dans la table
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($don);
 			$em->flush();
 
-			// Retour à l'accueil :
+			//retour à l'accueil
 			return $this->redirectToRoute('index');
 		}
-		// Affichage du formulaire :
-		return $this->render('templates/professionnel.html.twig',
-									array('form' => $form->createView()));
+		//affichage du formulaire
+		return $this->render('profil.html.twig',
+									array('formDon' => $form->createView(),
+												'title' => 'profil'));
 	}
 
 

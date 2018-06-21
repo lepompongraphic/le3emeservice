@@ -214,6 +214,7 @@ nav ul li a:hover, nav ul li a:focus {
   color: #333;
 }
 
+/* Menu hamburger */
 .ion-navicon-round {
   color: #fff;
 }
@@ -221,18 +222,15 @@ nav ul li a:hover, nav ul li a:focus {
 .logo {
   float: left;
 }
-
 .logo h3 {
     font-family: 'Cabin Sketch', cursive;
     color: #fff;
-    height: 50px;
-    line-height: 50px;
 }
 
-/*.logo img {
+.logo img {
   width: 200px;
-  height: 50px;
-}*/
+
+}
 
 .responsive {
   display: none;
@@ -452,7 +450,7 @@ color: #d19275;
 #portfolio {
   background: #f7f7f7;
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 50px;
 }
 
 #portfolio .portfolio-list {
@@ -630,8 +628,7 @@ color: #d19275;
 /*-----------------------------------------------------------------------------------*/
 
 #inscription {
-  padding-top: 20px;
-  padding-bottom: 100px;
+  max-width: 35%
 }
 
 #inscription h2 {
@@ -639,36 +636,15 @@ color: #d19275;
   text-align: center;
 }
 
-#inscription .col-sm-8 {
-  float: none;
-  margin: 0 auto;
+#inscription fieldset {
+  border: 1px solid #898989;
+  border-radius: 2px;
+  padding: 40px 20px 20px 20px;
+  margin-bottom: 100px;
 }
 
-fieldset {
-  border: 1px solid #999;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 25px;
-}
-
-#inscription label {
-  font-weight: bolder;
-}
-
-#inscription input {
-  border-radius: 5px;
-}
-
-#inscription .form-group {
-  padding-bottom: 4px;
-}
-
-#form_statut input {
-  margin-right: 5px;
-}
-
-#form_statut label {
-  margin-right: 30px;
+#inscription hr {
+  margin: 30px auto;
 }
 
 #inscription button {
@@ -679,10 +655,54 @@ fieldset {
 /*  Connexion
 /*-----------------------------------------------------------------------------------*/
 
+#connexion {
+  max-width: 35%
+}
 
+#connexion h2 {
+  padding: 100px 0 100px 0;
+  text-align: center;
+}
+
+#connexion fieldset {
+  border: 1px solid #898989;
+  border-radius: 2px;
+  padding: 40px 20px 20px 20px;
+  margin-bottom: 100px;
+}
+
+#connexion hr {
+  margin: 30px auto;
+}
+
+#connexion button {
+  width: 100%;
+}
 
 /*-----------------------------------------------------------------------------------*/
 /*  Page membre
 /*-----------------------------------------------------------------------------------*/
 
+#page_membre {
+  max-width: 60%
+}
 
+#page_membre h2 {
+  padding: 100px 0 100px 0;
+  text-align: center;
+}
+
+#page_membre fieldset {
+  border: 1px solid #898989;
+  border-radius: 2px;
+  padding: 40px 20px;
+  margin-bottom: 100px;
+}
+
+.list-group-item {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #898989;
+  border-right: 1px solid #898989;
+  border-left: 1px solid #898989;
+  margin: 0 0;
+}

@@ -1,8 +1,6 @@
 <?php
 namespace App\Form;
-
 //src/Form/FormType.php
-
 use App\Entity\Membre;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,19 +14,20 @@ class FormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('email', EmailType::class, array('label' => 'Email'))
+        $builder->add('email', EmailType::class)
                 ->add('mdp', PasswordType::class, array('label' => 'Mot de passe'))
-                ->add('raisonSocial', TextType::class, array('label' => 'Raison sociale'))
-                ->add('siret', TextType::class, array('label' => 'N° Siret'))
-                ->add('adresse', TextType::class, array('label' => 'Adresse'))
+                ->add('raisonSocial', TextType::class)
+                ->add('siret', TextType::class)
+                ->add('adresse', TextType::class)
+                ->add('cp', TextType::class)
+                ->add('ville', TextType::class)
                 ->add('cp', TextType::class, array('label' => 'Code Postal'))
-                ->add('ville', TextType::class, array('label' => 'Ville'))
                 ->add('tel', TextType::class, array('label' => 'Telephone'))
                 ->add('statut', ChoiceType::class,
-                  array('choices'=>array('Association'=>'a',
-                                      'Professionnel'=>'p'),
+                  array('choices'=>array('association'=>'a',
+                                      'professionnel'=>'p'),
                                       'expanded'=> true, 
-                                      'multiple'=> false, 'label' => 'Statut'));      
+                                      'multiple'=> false));      
     }
 
      public function configureOptions(OptionsResolver $resolver)
@@ -37,4 +36,8 @@ class FormType extends AbstractType
         $resolver->setDefaults(array('data_class'=>Membre::class));
           
     }
+
+
+
+
 }

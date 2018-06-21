@@ -55,6 +55,8 @@ class ProfilController extends Controller
 		if($form->isSubmitted())
 		{
 
+			$user = $this->getUser()->getIdMembre();
+			$don->setIdMembre($user);
 			//enregistrement dans la table
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($don);

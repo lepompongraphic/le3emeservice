@@ -13,20 +13,37 @@
 		<br>
 		<h2>Profile Professionnel</h2>
 		<br>
-
-		<div class="alert alert-secondary" role="alert">
-			<h4>Vous êtes bien connecté {{ app.user.username }}  <i class="fas fa-user"></i> </h4>
-			<p><strong>Votre siret:</strong> {{ app.user.siret }}</p>
-			<p><strong>Votre email:</strong> {{ app.user.email }}</p>
-			<p><strong>Votre adresse:</strong> {{ app.user.adresse }}, {{ app.user.cp }} - {{ app.user.ville }}</p>
-			<p><strong>Votre téléphone:</strong> {{ app.user.tel }}</p>
-		</div>
-		
-		{# Formulaire produit #}
-
-		<br><br>
 		
 		<div class="container">
+
+			{# Profil Professionnel #}
+			<div class="card" style="width: 60rem;">
+				<div class="row" id="profile" role="alert">
+
+					<article class="col-md-5">
+						<img class="card-img-top" src="images/prof.png" alt="Card image cap">
+					</article>
+				
+					<article class="col-md-7">
+						<div class="card-body">
+							<hr>
+							<h5 class="card-title">Vous êtes bien connecté {{ app.user.username }} <i class="fas fa-user"></i></h5>
+							<hr>
+						    <p class="card-text">
+						    	<p><strong>Votre siret:</strong> {{ app.user.siret }}</p>
+								<p><strong>Votre email:</strong> {{ app.user.email }}</p>
+								<p><strong>Votre adresse:</strong> {{ app.user.adresse }} {{ app.user.cp }} {{ app.user.ville }}</p>
+								<p><strong>Votre téléphone:</strong> {{ app.user.tel }}</p>
+						    
+						</div>
+					</article>
+				</div>
+			</div>
+
+			<br><br>
+
+			{# Formulaire produit #}
+
 			<div class="row">
 				<div class="col-sm-8">
 				<h2 class="text-center">Proposer un don</h2>
@@ -49,14 +66,7 @@
 				{{ form_row(formDon.heureCollecte, 
 										{attr: {class: 'form-control'}}) }}
 				</div>
-				<div class="form-group">
-			        <div class="form-check form-check-inline">
-				    {{ form_row(formDon.reserver, 
-				                             {attr: {class: 'form-check-input'}}) }}
-				    </div>
-			    </div>
-
-				
+		
 				<div class="form-group text-center">
 					<button type="submit" class="btn btn-dark">Valider</button>
 				</div>
@@ -74,15 +84,39 @@
 		<h2>Profile de votre Association</h2>
 		<br>
 
-		<div class="alert alert-secondary" role="alert">
-			<h4>Vous êtes bien connecté {{ app.user.username }}  <i class="fas fa-user"></i> </h4>
-			<p><strong>Votre siret:</strong> {{ app.user.siret }}</p>
-			<p><strong>Votre email:</strong> {{ app.user.email }}</p>
-			<p><strong>Votre adresse:</strong> {{ app.user.adresse }} {{ app.user.cp }} {{ app.user.ville }}</p>
-			<p><strong>Votre téléphone:</strong> {{ app.user.tel }}</p>
+		<div class="container">
+
+			{# Profil Professionnel #}
+			
+			<div class="card" style="width: 60rem;">
+				<div class="row" id="profile" role="alert">
+
+					<article class="col-md-5">
+						<img class="card-img-top" src="images/asso.jpg" alt="Card image cap">
+					</article>
+				
+					<article class="col-md-7">
+						<div class="card-body">
+							<hr>
+							<h5 class="card-title">Vous êtes bien connecté {{ app.user.username }} <i class="fas fa-user"></i></h5>
+							<hr>
+						    <p class="card-text">
+						    	<p><strong>Votre siret:</strong> {{ app.user.siret }}</p>
+								<p><strong>Votre email:</strong> {{ app.user.email }}</p>
+								<p><strong>Votre adresse:</strong> {{ app.user.adresse }} {{ app.user.cp }} {{ app.user.ville }}</p>
+								<p><strong>Votre téléphone:</strong> {{ app.user.tel }}</p>
+						    
+						</div>
+					</article>
+				</div>
+			</div>
 			
 			{# -- API -- #}
-		</div>
+
+			<br>
+	        <div id="map"></div>
+			</div>
+       
 		<br>
 		<br>
 		<br>

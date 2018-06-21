@@ -1,34 +1,38 @@
 <?php 
 namespace App\Controller;
-
-//* src/Controller/PartenaireContoller.php */
-
+//src/Controller/PartenaireContoller.php
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+// annotations pour les routes
 
-// Annotations pour les routes :
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-// Table des partenaires :
-use App\Entity\Partenaire;
+// pour la table des partenaire
+use App\Entity\Membre;
 
 
 
 
 class PartenaireController extends Controller
 {
+
 /**
 * @Route("/Partenaire",
 * name="Partenaire")
 */
     public function partenaire()
     {
-    	// Appel de la table :
-    	$partenaire = $this->getDoctrine()->getRepository(Partenaire::class);
-    	// Liste de toute les partenaires (SELECT * FROM partenaire) :
+    	// appele du  Partenaire
+    	$partenaire = $this->getDoctrine()->getRepository(Membre::class);
+    	// liste de toute les partenaires (SELECT * FROM membre)
     	$listePartenaire = $partenaire->findAll();
-    return $this->render('public/partenaire.html.twig',
-                   array('partenaire' =>$listePartenaire));
+    return $this->render('partenaire.html.twig',
+                   array('title' => 'Nos partenaires',
+                         "partenaire" => $listePartenaire));
     }
+
+ 
+
+
 }
