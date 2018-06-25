@@ -19,43 +19,58 @@ class Don
     /**
      * @ORM\Column(type="integer")
      */
-    private $idMembre;
+    private $id_membre;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
+     */
+    private $ville;
+
+    /**
+     * @ORM\Column(type="text")
      */
     private $description;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $dateEntree;
+    private $date_entree;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
-    private $reserver;
+    private $reservation;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
-    private $heureCollecte;
+    private $commentaires;
 
     public function getId()
     {
         return $this->id;
     }
 
-
-
     public function getIdMembre(): ?int
     {
-        return $this->idMembre;
+        return $this->id_membre;
     }
 
-    public function setIdMembre(int $idMembre): self
+    public function setIdMembre(int $id_membre): self
     {
-        $this->idMembre = $idMembre;
+        $this->id_membre = $id_membre;
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->ville;
+    }
+
+    public function setVille(string $ville): self
+    {
+        $this->ville = $ville;
 
         return $this;
     }
@@ -74,37 +89,41 @@ class Don
 
     public function getDateEntree(): ?\DateTimeInterface
     {
-        return $this->dateEntree;
+        return $this->date_entree;
     }
 
-    public function setDateEntree(\DateTimeInterface $dateEntree): self
+    public function setDateEntree(\DateTimeInterface $date_entree): self
     {
-        $this->dateEntree = $dateEntree;
+        $this->date_entree = $date_entree;
 
         return $this;
     }
 
-    public function getReserver(): ?string
+    public function getReservation(): ?string
     {
-        return $this->reserver;
+        return $this->reservation;
     }
 
-    public function setReserver(string $reserver): self
+    public function setReservation(string $reservation): self
     {
-        $this->reserver = $reserver;
+        $this->reservation = $reservation;
 
         return $this;
     }
 
-    public function getHeureCollecte(): ?string
+    public function getCommentaires(): ?string
     {
-        return $this->heureCollecte;
+        return $this->commentaires;
     }
 
-    public function setHeureCollecte(string $heureCollecte): self
+    public function setCommentaires(string $commentaires): self
     {
-        $this->heureCollecte = $heureCollecte;
+        $this->commentaires = $commentaires;
 
         return $this;
     }
+
+   public function __toString() {
+    return $this->ville;
+}
 }

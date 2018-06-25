@@ -30,13 +30,12 @@ class MembreController extends Controller
 	* "/inscription",
 	* name="inscription")
 	*/
-	public function inscription(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+	public function inscription(Request $request, UserPasswordEncoderInterface $passwordEncoder, \Swift_Mailer $mailer)
 	{
 		// Liaison avec la table des membres :
 		$membre = new Membre();
 		// Création du formulaire :
 		$form = $this->createForm(FormType::class, $membre);
-
 		// Récupération des données du formulaire :
 		$form->handleRequest($request);
 		// Si soumis et validé :
@@ -49,6 +48,14 @@ class MembreController extends Controller
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($membre);
 			$em->flush();
+
+			// Envoi d'un mail :
+			$message = (new \Swift_Message('Bienvenue sur le 3ème Service'))
+			->setFrom('le3emeservice@gmail.com')
+			->setTo($membre->getEmail())
+			->setBody($this->renderView('mailinscription.html.twig', array('name' => $membre->getraisonSocial())), 'text/html');
+			// Envoi du message :
+			$mailer->send($message);
 
 			// Retour à l'accueil
 			return $this->redirectToRoute('index');
@@ -64,7 +71,7 @@ class MembreController extends Controller
 	* "/login",
 	* name="login")
 	*/
-	public function connexion(Request $request, AuthenticationUtils $authUtils)
+	public function login(Request $request, AuthenticationUtils $authUtils)
 	{
 		// Récupération de l'erreur si besoin :
 		$error = $authUtils->getLastAuthenticationError();

@@ -8,7 +8,7 @@ index:
 # Route et page fictive de connexion :
 login:
   path: /login
-  controller: App\Controller\SecurityController::login
+  controller: App\Controller\MembreController::login
 
 # Page de déconnexion fictive (gérée par Symfony) :
 logout:

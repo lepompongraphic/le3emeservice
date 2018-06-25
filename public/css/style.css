@@ -268,9 +268,9 @@ nav ul li a:hover, nav ul li a:focus {
     padding-top: 40%;
 }
 
-#header img {
+/* #header img {
   max-width: 75%;
-}
+} */ 
 
 .header-content h1 {
   font-size: 40px;
@@ -631,7 +631,7 @@ color: #d19275;
 
 #inscription {
   padding-top: 20px;
-  padding-bottom: 100px;
+  padding-bottom: 200px;
 }
 
 #inscription h2 {
@@ -679,10 +679,268 @@ fieldset {
 /*  Connexion
 /*-----------------------------------------------------------------------------------*/
 
+#connexion {
+  padding-top: 20px;
+  padding-bottom: 200px;
+}
 
+#connexion h2 {
+  padding: 100px 0 100px 0;
+  text-align: center;
+}
+
+#connexion .col-sm-8 {
+  float: none;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+#connexion label {
+  font-weight: bolder;
+}
+
+#connexion input {
+  border-radius: 5px;
+}
+
+#connexion .form-group {
+  padding-bottom: 4px;
+}
+
+#connexion button {
+  width: 100%;
+}
 
 /*-----------------------------------------------------------------------------------*/
-/*  Page membre
+/*  Page membre Professionnel
 /*-----------------------------------------------------------------------------------*/
 
+#backgroundProfil {
+  background: #f7f7f7;
+  padding-bottom: 100px;
+}
 
+#profilProf {
+  padding-top: 20px;
+}
+
+#profilProf h2 {
+  padding: 100px 0 100px 0;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.row .col-md-5 {
+  display: flex;
+  align-items: center;
+}
+
+article img {
+  max-width: 100%;
+}
+
+.card-text p {
+  line-height: 20px;
+}
+
+#don {
+  padding-top: 20px;
+  padding-bottom: 200px;
+}
+
+#don h2 {
+  padding: 100px 0 100px 0;
+  text-align: center;
+}
+
+#don .col-sm-8 {
+  float: none;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+#don label {
+  font-weight: bolder;
+}
+
+#don input {
+  border-radius: 5px;
+}
+
+#don textarea {
+  border-radius: 5px !important;
+  height: 100px !important;
+  line-height: 20px !important;
+  font-size: 1em !important;
+}
+
+#date {
+  width: 100%;
+}
+
+#date div {
+  width: 100%;
+}
+
+#form_don_dateEntree {
+  text-align: center;
+}
+
+#date select {
+  width: 33.33%;
+}
+
+#form_don_dateEntree_day {
+  border-radius: 5px 0 0 5px;
+}
+
+#form_don_dateEntree_year {
+  border-radius: 0 5px 5px 0;
+}
+
+#don .form-group {
+  padding-bottom: 4px;
+}
+
+#don .form-group .form-check {
+  padding-bottom: 25px;
+}
+
+#form_don_reserver input {
+  margin-right: 5px;
+}
+
+#form_don_reserver label {
+  margin-right: 30px;
+}
+
+#don button {
+  width: 100%;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Page membre Association
+/*-----------------------------------------------------------------------------------*/
+
+#backgroundProfil {
+  background: #f7f7f7;
+  padding-bottom: 100px;
+}
+
+#profilAssos {
+  padding-top: 20px;
+}
+
+#profilAssos h2 {
+  padding: 100px 0 100px 0;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.row .col-md-5 {
+  display: flex;
+  align-items: center;
+}
+
+article img {
+  max-width: 100%;
+}
+
+.card-text p {
+  line-height: 20px;
+}
+
+#recherche {
+  padding-top: 20px;
+  padding-bottom: 200px;
+}
+
+#recherche h2 {
+  padding: 100px 0 100px 0;
+  text-align: center;
+}
+
+#recherche .col-sm-8 {
+  float: none;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+#recherche label {
+  font-weight: bolder;
+}
+
+#recherche input, #recherche select {
+  border-radius: 5px;
+}
+
+#recherche .form-group {
+  padding-bottom: 4px;
+}
+
+#recherche .form-group .form-check {
+  padding-bottom: 25px;
+}
+
+#form_don_reserver input {
+  margin-right: 5px;
+}
+
+#form_don_reserver label {
+  margin-right: 30px;
+}
+
+#recherche button {
+  width: 100%;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Liste des dons
+/*-----------------------------------------------------------------------------------*/
+
+#listeDons {
+  padding-bottom: 200px;
+}
+
+#listeDons {
+  padding-top: 20px;
+}
+
+#listeDons h2 {
+  padding: 100px 0 100px 0;
+  text-align: center;
+}
+
+.card-text p {
+  line-height: 20px;
+}
+
+#listeDons .card {
+  margin-bottom: 100px;
+}

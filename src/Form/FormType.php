@@ -32,9 +32,7 @@ class FormType extends AbstractType
     }
 
      public function configureOptions(OptionsResolver $resolver)
-
     {
         $resolver->setDefaults(array('data_class'=>Membre::class));
-          
     }
 }

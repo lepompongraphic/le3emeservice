@@ -47,4 +47,30 @@ class DonRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findByVilles()
+    {
+        // Connexion BDD :
+        $cnx = $this->getEntityManager()->getConnection();
+        // Requête SQL :
+        $req = "SELECT DISTINCT ville FROM don";
+        // Préparation :
+        $villes = $cnx->prepare($req);
+        // Exécution :
+        $villes->execute();
+    }
+
+    public function findDons($ville)
+    {
+        // Connexion BDD :
+        $cnx = $this->getEntityManager()->getConnection();
+        // Requête SQL :
+        $req = "SELECT * FROM don WHERE ville=:ville";
+        // Préparation :
+        $dons = $cnx->prepare($req);
+        // Exécution :
+        $dons->execute([':ville' => $ville]);
+        // Retour :
+        return $dons->fetchAll();
+    }
 }

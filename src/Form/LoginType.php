@@ -18,13 +18,10 @@ class LoginType extends AbstractType
     {
         $builder->add('email', EmailType::class, array('label' => 'Email'))
                 ->add('mdp', PasswordType::class, array('label' => 'Mot de passe'));
-          
     }
 
      public function configureOptions(OptionsResolver $resolver)
-
     {
-        $resolver->setDefaults(array('data_class'=>Membre::class));
-          
+        $resolver->setDefaults(array('data_class' => Membre::class));
     }
 }

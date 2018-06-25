@@ -2,144 +2,155 @@
 
 {% extends 'base.html.twig' %}
 
-{% block title %} Profil {% endblock %}
-
-
 {% block body %}
 
+	{# Profil professionnel #}
 
 	{% if app.user.statut == 'p' %}
 
-		<br>
-		<h2>Profile Professionnel</h2>
-		<br>
+		<div id="backgroundProfil">
+			<div class="container" id="profilProf">
 
-		<div class="alert alert-secondary" role="alert">
-			<h4>Vous êtes bien connecté {{ app.user.username }}  <i class="fas fa-user"></i> </h4>
-			<p><strong>Votre siret:</strong> {{ app.user.siret }}</p>
-			<p><strong>Votre email:</strong> {{ app.user.email }}</p>
-			<p><strong>Votre adresse:</strong> {{ app.user.adresse }}, {{ app.user.cp }} - {{ app.user.ville }}</p>
-			<p><strong>Votre téléphone:</strong> {{ app.user.tel }}</p>
+				<h2>Espace Professionnels</h2>
+
+				<div class="card">
+					<div class="row">
+
+						<article class="col-md-5">
+							<img src="{{ asset('images/prof.jpg') }}" alt="Professionnels">
+						</article>
+					
+						<article class="col-md-7">
+							<div class="card-body">
+								<h5 class="card-title text-center">{{ app.user.raisonsocial }}<i class="fas fa-user"></i></h5>
+								<hr>
+							    <div class="card-text">
+							    	<p><strong>Numéro SIRET :</strong> {{ app.user.siret }}</p>
+									<p><strong>Email :</strong> {{ app.user.email }}</p>
+									<p><strong>Adresse :</strong> {{ app.user.adresse }}</p> 
+									<p><strong>Code Postal :</strong> {{ app.user.cp }}</p>
+									<p><strong>Ville :</strong> {{ app.user.ville }}</p>
+									<p><strong>Téléphone :</strong> {{ app.user.tel }}</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+
+			</div>
 		</div>
 		
 		{# Formulaire produit #}
-
-		<br><br>
 		
-		<div class="container">
+		<div class="container" id="don">
 			<div class="row">
 				<div class="col-sm-8">
+
 				<h2 class="text-center">Proposer un don</h2>
 				<br>
 
 				{{ form_start(formDon) }}
-				<div class="form-group">
+
+				<fieldset>
+
+				<div class="form-group" rows="10">
 				{{ form_row(formDon.description, 
 										{attr: {class: 'form-control'}}) }}
 				</div>
 
 				<div class="form-group">
-					<div class="form-check form-check-inline">
-					{{ form_row(formDon.dateEntree, 
-											{attr: {class: 'form-control'}}) }}
+					<div class="form-check form-check-inline" id="date">
+					{{ form_row(formDon.dateEntree) }}
 					</div>
 				</div>
 
 				<div class="form-group">
-				{{ form_row(formDon.heureCollecte, 
+				{{ form_row(formDon.commentaires, 
 										{attr: {class: 'form-control'}}) }}
 				</div>
-				<div class="form-group">
-			        <div class="form-check form-check-inline">
-				    {{ form_row(formDon.reserver, 
-				                             {attr: {class: 'form-check-input'}}) }}
-				    </div>
-			    </div>
 
+				</fieldset>
 				
 				<div class="form-group text-center">
-					<button type="submit" class="btn btn-dark">Valider</button>
+					<button type="submit" class="btn btn-defeault btn-send">Valider</button>
 				</div>
+
 				{{ form_end(formDon) }}
-				<br>
 
-				</div> {# fin col-sm-8 #}
-			</div> {# fin row #}
-		</div> {# fin container #}
+				</div>
+			</div> 
+		</div> 
 
+	{# Profil association #}
 
-	{% else %}
+	{% elseif app.user.statut == 'a' %}
 
-		<br>
-		<h2>Profile de votre Association</h2>
-		<br>
+		<div id="backgroundProfil">
+			<div class="container" id="profilAssos">
 
-		<div class="alert alert-secondary" role="alert">
-			<h4>Vous êtes bien connecté {{ app.user.username }}  <i class="fas fa-user"></i> </h4>
-			<p><strong>Votre siret:</strong> {{ app.user.siret }}</p>
-			<p><strong>Votre email:</strong> {{ app.user.email }}</p>
-			<p><strong>Votre adresse:</strong> {{ app.user.adresse }} {{ app.user.cp }} {{ app.user.ville }}</p>
-			<p><strong>Votre téléphone:</strong> {{ app.user.tel }}</p>
-			
-			{# -- API -- #}
+				<h2>Espace Association</h2>
+
+				<div class="card">
+					<div class="row">
+
+						<article class="col-md-5">
+							<img src="{{ asset('images/asso.jpg') }}" alt="Associations">
+						</article>
+					
+						<article class="col-md-7">
+							<div class="card-body">
+								<h5 class="card-title text-center">{{ app.user.raisonsocial }}<i class="fas fa-user"></i></h5>
+								<hr>
+							    <div class="card-text">
+							    	<p><strong>Numéro SIRET :</strong> {{ app.user.siret }}</p>
+									<p><strong>Email :</strong> {{ app.user.email }}</p>
+									<p><strong>Adresse :</strong> {{ app.user.adresse }}</p> 
+									<p><strong>Code Postal :</strong> {{ app.user.cp }}</p>
+									<p><strong>Ville :</strong> {{ app.user.ville }}</p>
+									<p><strong>Téléphone :</strong> {{ app.user.tel }}</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+
+			</div>
 		</div>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
 
+		{# Formulaire recherche #}
+
+		<div class="container" id="recherche">
+			<div class="row">
+				<div class="col-sm-8">
+
+					<h2 class="text-center">Rechercher un don</h2>
+
+					{% if listeVille %}
+
+					{{ form_start(formRecherche) }}
+
+					<fieldset>
+
+					<div class="form-group">
+					{{ form_row(formRecherche.ville, {attr: {class: 'form-control'}}) }}
+					</div>
+
+					</fieldset>
+
+					<div class="form-group text-center">
+					<button type="submit" class="btn btn-defeault btn-send">Valider</button>
+					</div>
+
+					{{ form_end(formRecherche) }}
+
+					{% else %}
+					<p class="alert alert-danger text-center">Aucun don n'est actuellement disponible</p>
+					{% endif %}
+
+				</div>
+			</div> 
+		</div>
+	
 	{% endif %}
 
 {% endblock %}
-
-
-
-
-
-
-{# {% block title %} Assotiation {% endblock %}
-
-
-{% block body %}
-
-	<br>
-	<h2>Profile de votre Association</h2>
-	<br>
-
-<div class="alert alert-secondary" role="alert">
-	<h4>Vous êtes bien connecté {{ app.membre.username }}  <i class="fas fa-user"></i> </h4>
-	<p><strong>Votre siret:</strong> {{ app.membre.siret }}</p>
-	<p><strong>Votre email:</strong> {{ app.membre.email }}</p>
-	<p><strong>Votre adresse:</strong> {{ app.membre.adresse }} {{ app.membre.cp }} {{ app.membre.ville }}</p>
-	<p><strong>Votre téléphone:</strong> {{ app.membre.tel }}</p>
-	
-	-- API --
-
-</div>
-
-
-{% endblock %} #}

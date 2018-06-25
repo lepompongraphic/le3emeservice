@@ -1,39 +1,42 @@
 <?php
 namespace App\Controller;
+
 //src/Controller/ProfilController
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-//sécurité
+
+// Sécurité :
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-//pour utiliser les annotations
+
+// Pour utiliser les annotations :
 use Symfony\Component\Routing\Annotation\Route;
-// table membre
+
+// Table membre :
 use App\Entity\Membre;
-// table dons
+
+// Table don :
 use App\Entity\Don;
-//formulaire inscription
+
+// Formulaire Don :
 use App\Form\FormDonType;
 
-class ProfilController extends Controller
+// Formulaire Recherche :
+use App\Form\FormRechercheType;
 
+class ProfilController extends Controller
 {
-	/* Profile d'un utilisateur
-	affiche le formulaire et ajoute l'utilisateur dans la table membre 
-	*/
 	/**
 	* @Route(
-	*		"/profil",
-	*	  name="profil")
+	* "/profil",
+	* name="profil")
 	*/
-	
 	public function profil(AuthorizationCheckerInterface $authChecker, Request $request)
 	{
-
 		if($authChecker->isGranted('ROLE_ADMIN'))
 		{
 			$profil = 'admin';
@@ -44,30 +47,53 @@ class ProfilController extends Controller
 		}
 
 
-		//liaison avec la table des utilisateurs
+		// Enregistrement Don :
+		// Récupération id et ville membre :
+		$don = $this->getUser();
+		$idMembre = $don->GetIdMembre();
+		$villeMembre = $don->GetVille();
+		// Liaison avec la table Don :
 		$don = new Don();
-		//création du formulaire
+		$don->setIdMembre($idMembre);
+		$don->setVille($villeMembre);
+		$don->setReservation('non');
+		// Création du formulaire :
 		$form = $this->createForm(FormDonType::class, $don);
-
-		//récupération des données du formulaire
+		// Récupération des données du formulaire :
 		$form->handleRequest($request);
-		//si soumis et validé
-		if($form->isSubmitted())
+		// Si soumis et validé :
+		if($form->isSubmitted() && $form->isValid())
 		{
-
-			//enregistrement dans la table
+			// Enregistrement dans la table :
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($don);
 			$em->flush();
 
-			//retour à l'accueil
-			//return $this->redirectToRoute('index');
+			// Retour au profil :
+			return $this->redirectToRoute('profil');
 		}
-		//affichage du formulaire
-		return $this->render('profil.html.twig',
-									array('profil' => $profil,
-											'formDon' => $form->createView(),
-											'title' => 'profil'));
+
+
+		// Recherche Don :
+		// Requête affichage villes :
+		$listeVille = $this->getDoctrine()->getRepository(Don::class)->findByVilles();
+
+		$donsRecherche = new Don();
+		// Formulaire de recherche par ville :
+		$formRecherche = $this->createForm(FormRechercheType::class, $donsRecherche);
+		// Récupération des données du formulaire :
+		$formRecherche->handleRequest($request);
+		// Si soumis et validé :
+		if($formRecherche->isSubmitted() && $formRecherche->isValid())
+		{
+			$data = $formRecherche->getData();
+			$liste = $this->getDoctrine()->getRepository(Don::class)->findDons($data->getVille());
+			// return new Response('<pre>'.print_r($liste, true));
+			return $this->render('listeDons.html.twig', array('liste' => $liste));
+		}
+		
+
+		// Affichage :
+		return $this->render('profil.html.twig', array('profil' => $profil, 'formDon' => $form->createView(), 'listeVille' => print_r($listeVille), 'formRecherche' => $formRecherche->createView()));
 	}
-	
 }

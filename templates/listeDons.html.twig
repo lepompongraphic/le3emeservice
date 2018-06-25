@@ -1,0 +1,38 @@
+{# templates/listeDons.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	{# Affichage Dons #}
+
+		<div class="container" id="listeDons">
+
+				<h2>Liste des Dons</h2>
+
+					{% for don in liste %}
+
+					<div class="card">
+						<div class="row">
+
+							<article div class="col-md-8">
+
+									<div class="card-body">
+							    		<div class="card-text">
+
+											<p><strong>Description :</strong> {{ don.description }}</p>
+											<p><strong>Mise à disposition :</strong> {{ don.date_entree }}</p>
+											<p><strong>Commentaires :</strong> {{ don.commentaires }}</p>
+
+										</div>
+									</div>
+
+							</article>
+
+						</div>
+					</div>
+
+					{% endfor %}
+		</div>
+
+{% endblock %}
