@@ -1,0 +1,21 @@
+{# templates/public/partenaire.html.twig #}
+
+{% extends 'base.html.twig' %}
+{% block title %} {{ title }} {% endblock %}
+
+	{% block body %}
+		<h2>Nos Partenaire </h2>
+			{% for article in partenaire %}
+				<article class="col-md-3">
+				      <ul>
+						<li>{{ article.raisonSocial }}</li>
+						<li>{{ article.adresse }}</li>
+						<li>{{ article.ville }}</li>	
+						<li>{{ article.cp }}</li>				
+					</ul>
+				</article>				
+			{% endfor %}
+		
+
+{% endblock %}
+		
