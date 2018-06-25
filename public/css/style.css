@@ -171,7 +171,7 @@ p {
 
 nav {
   position: fixed;
-  background: #d19275;
+  background: #333d3f;
   z-index: 1000;
   width: 100%;
   padding: 20px;
@@ -345,7 +345,7 @@ color: #d19275;
 
 #projet .div-img-bg {
   padding-bottom: 30px;
-  border: 20px solid #d19275;
+  border: 20px solid #333d3f;
 }
 
 #projet .div-img-bg .about-img img {
